@@ -32,16 +32,14 @@ public:
         }
     }
 
-    int dequeue() {
+    void dequeue() {
         if (head == NULL) {
-            return -1;
+            return;
         } else {
-            int data = head->data;
             head = head->next;
             if (head == NULL) {
                 tail = NULL;
             }
-            return data;
         }
     }
 
@@ -70,7 +68,7 @@ int main() {
             queue.enqueue(x);
         }
         else if (operation == "dequeue") {
-            int data = queue.dequeue();
+            queue.dequeue();
         }
     }
 
@@ -78,4 +76,5 @@ int main() {
 
     return 0;
 }
+
 
